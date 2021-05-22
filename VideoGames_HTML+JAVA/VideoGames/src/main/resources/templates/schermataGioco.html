@@ -1,0 +1,35 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+
+	<h1>Dettagli gioco Selezionato:</h1>
+
+
+	<form action="#" th:action="@{/salva}" th:object="${giocoSingolo}">
+		<table>
+			<tr>
+				<td>ID gioco:</td>
+				<td><input type="text" th:field="*{id}"/> </td>
+			</tr>
+			<tr>
+				<td>Genere:</td>
+				<td><input type="text" th:field="*{genere}"/> </td>
+			</tr>
+			<tr>
+				<td>Nome:</td>
+				<td><input type="text" th:field="*{nome}"/> </td>
+			</tr>
+			<tr>
+				<td>Casa Produtrice:</td>
+				<td><input type="text" th:field="*{casaProdutrice}"/> </td>
+			</tr>
+			<tr>
+				<td>Eta Minima:</td>
+				<td><input type="text" th:field="*{etaMinima}"/> </td>
+			</tr>
+		</table>
+		<input type="submit" value="Salva dati."/>
+	</form>
+
+</body>
+
+</html>

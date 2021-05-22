@@ -1,0 +1,62 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Lista Dei Giochi</h1>
+
+	<button><a th:href="@{/aggiungiVideoGiochi}">Nuovo Gioco:</a></button>
+
+	<table>
+		<tr>
+			<th>ID:</th>
+			<th>Genere:</th>
+			<th>Nome:</th>
+			<th>Casa Produtrice:</th>
+			<th>Eta:</th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr th:each="gioco : ${videoGioco}">
+			<td th:text="${gioco.id}" />
+			<td th:text="${gioco.genere}" />
+			<td th:text="${gioco.nome}" />
+			<td th:text="${gioco.casaProdutrice}" />
+			<td align="right" th:text="${gioco.etaMinima}" />
+			<td>
+				<form action="#" th:action="@{/modifica}">
+					<input type="hidden" name="idGame" th:value="${gioco.id}" />
+					<button onclick='this.form.submit();' value="M">M</button>
+				</form>
+			</td>
+			<td>
+				<form action="#" th:action="@{/elimina}">
+					<input type="hidden" name="idGame" th:value="${gioco.id}" />
+					<button onclick='this.form.submit();' value="X">X</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+
+</body>
+
+</html>

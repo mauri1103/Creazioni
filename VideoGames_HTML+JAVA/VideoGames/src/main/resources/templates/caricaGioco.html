@@ -1,0 +1,33 @@
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>IL TUO GIOCO</title>
+        <meta http-equiv="Contnt-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Inserisci i dati del gioco che vuoi caricare:</h1>
+    
+        <form action="#" th:action="@{/newGioco}" th:object="${nuovo}" method="post">
+            <p>
+                ID GIOCO: <input type="text" th:field="*{nome}"/>
+            </p>        
+            <p>
+                Genere: <input type="text" th:field="*{genere}"/>
+            </p>        
+            <p>
+                Nome: <input type="text" th:field="*{nome}"/>
+            </p>        
+            <p>
+                Casa produtrice: <input type="text" th:field="*{casaProdutrice}"/>
+            </p>        
+            <p>
+                Eta: <input type="text" th:field="*{etaMinima}"/>
+            </p>        
+        
+            <p>
+                <input type="submit" value="Insert!"/>
+            </p>
+        
+        </form>
+    
+    </body>
+ </html>
